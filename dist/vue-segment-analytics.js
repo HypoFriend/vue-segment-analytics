@@ -1,5 +1,5 @@
 /*!
- * @hypofriend/vue-segment-analytics v0.3.4
+ * @hypofriend/vue-segment-analytics v0.3.5
  * (c) 2019 Ryan Stuart
  * Released under the MIT License.
  */
