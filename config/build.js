@@ -28,7 +28,7 @@ rollup.rollup({
       ]
     })
       .then(function (bundle) {
-        return write('dist/' + pack.name + '.js', bundle.generate({
+        return write('dist/' + pack.name.split('/')[1] + '.js', bundle.generate({
           format: 'umd',
           moduleName: classify(pack.name),
           banner: banner
@@ -53,7 +53,7 @@ rollup.rollup({
         var minified = banner + '\n' + uglify.minify(code, {
             fromString: true
           }).code
-        return write('dist/' + pack.name + '.min.js', minified)
+        return write('dist/' + pack.name.split('/')[1] + '.min.js', minified)
       })
       .then(zip)
   })
@@ -80,11 +80,11 @@ function write (dest, code) {
 
 function zip () {
   return new Promise(function (resolve, reject) {
-    fs.readFile('dist/' + pack.name + '.min.js', function (err, buf) {
+    fs.readFile('dist/' + pack.name.split('/')[1] + '.min.js', function (err, buf) {
       if (err) return reject(err)
       zlib.gzip(buf, function (err, buf) {
         if (err) return reject(err)
-        write('dist/' + pack.name + '.min.js.gz', buf).then(resolve)
+        write('dist/' + pack.name.split('/')[1] + '.min.js.gz', buf).then(resolve)
       })
     })
   })

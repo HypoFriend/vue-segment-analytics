@@ -1,5 +1,3 @@
-import loadScript from 'load-script'
-
 export default function init (config, callback) {
   if (!config.id || !config.id.length) {
     console.warn('Please enter a Segment.io tracking ID')

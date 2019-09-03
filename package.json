@@ -1,6 +1,6 @@
 {
-  "name": "vue-segment-analytics",
-  "version": "0.3.3",
+  "name": "@hypofriend/vue-segment-analytics",
+  "version": "0.3.4",
   "description": "Vue plugin for segment analytics.js",
   "main": "dist/vue-segment-analytics.js",
   "scripts": {
@@ -43,6 +43,8 @@
     "webpack-merge": "~4.1.0"
   },
   "dependencies": {
-    "load-script": "~1.0.0"
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "load-script": "^1.0.0"
   }
 }
